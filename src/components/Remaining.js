@@ -16,7 +16,7 @@ const Remaining = () => {
 
   return (
     <RemainingWrapper className={`alert alert-${alertType}`}>
-      <RemainingSpan>Remaining: £1000</RemainingSpan>
+      <RemainingSpan>Remaining: £{budget - totalExpenses}</RemainingSpan>
     </RemainingWrapper>
   );
 };

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { v4 as uuidv4 } from "uuid";
 import { useDispatch } from "react-redux";
+import MainActions from "../containers/Main/action";
 
 const AddExpenseFormWrapper = styled.form``;
 const AddExpenseName = styled.div``;
@@ -30,10 +31,7 @@ const AddExpenseForm = () => {
       cost: parseInt(cost),
     };
 
-    dispatch({
-      type: "ADD_EXPENSE",
-      payload: expense,
-    });
+    dispatch(MainActions.addExpense(expense));
   };
   return (
     <AddExpenseFormWrapper onSubmit={onSubmit}>

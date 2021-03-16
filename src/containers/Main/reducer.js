@@ -14,6 +14,7 @@ export const initialState = {
 const addExpense = (state, action) =>
   produce(state, (draft) => {
     draft.expenses = [...state.expenses, action.payload];
+    draft.budget = draft.budget - action.payload.cost;
   });
 
 const deleteExpense = (state, action) =>
