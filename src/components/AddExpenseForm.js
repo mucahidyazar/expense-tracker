@@ -31,12 +31,13 @@ const AddExpenseForm = () => {
       cost: parseInt(cost),
     };
 
-    dispatch(MainActions.addExpense(expense));
+    dispatch(MainActions.addExpenseRequest(expense));
   };
+
   return (
     <AddExpenseFormWrapper onSubmit={onSubmit}>
       <AddExpenseName>
-        <AddExpenseNameLabel for="name">Name</AddExpenseNameLabel>
+        <AddExpenseNameLabel htmlFor="name">Name</AddExpenseNameLabel>
         <AddExpenseNameInput
           required="required"
           type="text"
